@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .upload-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Hide the default file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Style the custom file input button */
+        .file-input-label {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .file-input-label:hover {
+            background-color: #0069d9;
+        }
+
+      /*  .file-input-label::before {
+       /*     content: "Choose File";
+      /*  }
+
+        /* Display the selected file name */
+        .file-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var logo = document.querySelector('.navbar-brand');
+            logo.addEventListener('click', function() {
+                window.location.href = 'page';
+            });
+
+            // Display the selected file name
+            var fileInput = document.querySelector('#imageUpload');
+            var fileNameDisplay = document.querySelector('.file-name');
+
+            fileInput.addEventListener('change', function() {
+                fileNameDisplay.textContent = this.files[0].name;
+            });
+        };
+    </script>
+</head>
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../static/images/949ea004-f044-4549-803f-84bcee94c27b-removebg-preview.png" width="200" height="100" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </section>
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Image Classification</h2>
+                    <form method="POST" enctype="multipart/form-data" action="/classify">
+                        <div class="form-group">
+                            <label for="imageUpload"><b>Choose an image:</b></label>
+                            <label class="file-input-label" for="imageUpload">Choose File</label>
+                            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+                            <div class="file-name"></div>
+                        </div>
+                        <button type="submit" class="upload-button">Upload and Classify</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Machine Learning Classification</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/start.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <script>
+        window.onload = function() {
+            var logo = document.querySelector('.navbar-brand');
+            logo.addEventListener('click', function() {
+                window.location.href = 'page';
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../static/images/949ea004-f044-4549-803f-84bcee94c27b-removebg-preview.png" width="200" height="100" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <h2>Data</h2>
+                    <form method="POST" action="/machine">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Your gender</label>
+                            <div class="col-sm-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="1">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="0">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" class="field" name="age" placeholder="Age">
+                        <input type="text" class="field" name="educ" placeholder=" Years of Education (EDUC)">
+                        <input type="text" class="field" name="ses" placeholder="Socioeconomic Status (1-5)">
+                        <input type="text" class="field" name="mmse" placeholder="Mini Mental State Examination (MMSE)">   
+                        <input type="text" class="field" name="cdr" placeholder="Clinical Dementia Rating (CDR)">     
+                        <input type="text" class="field" name="etiv" placeholder="Estimated total intracranial volume (eTIV)">               
+                        <input type="text" class="field" name="nwbv" placeholder="Normalize Whole Brain Volume (nWBV)">
+                        <input type="text" class="field" name="asf" placeholder="Atlas Scaling Factor (ASF)">
+                        <button class="btn" type="submit">Predict</button>
+                    </form>
+                </div>
+                {% if prediction %}
+                <div class="result">
+                    <h3>Prediction Result:</h3>
+                    <h4>{{ prediction }}</h4>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
