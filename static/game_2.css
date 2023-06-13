@@ -1,0 +1,138 @@
+/* a minimalist set of CSS resets */
+
+/* default to border-box */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* adjust typography defaults */
+body {
+  margin: 1rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #404040;
+  color: white;
+  text-align: center;
+}
+
+/* images and videos max out at full width */
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+h1{
+  font-family: verdana, arial, sans-serif; 
+}
+
+button{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#gameButtonArea > button{
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 2px; 
+}
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display:block;
+}
+
+.in_picture{
+  width: 40%;
+  height: 40%;
+}
+
+
+#startBtn, #stopBtn{
+  background: transparent; 
+  border-color: transparent;
+  width: fit-content;
+  padding: 20px 35px;
+  color: #FFFACD;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family:'Trebuchet MS', sans-serif;
+  transition: 0.8s;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+#startBtn:hover, #stopBtn:hover {
+  background-color: #FFFACD;
+  color: #050801;
+  box-shadow: 0 0 4px #FFFACD,
+              0 0 20px #FFFACD,
+              0 0 40px #FFFACD,
+              0 0 180px #FFFACD;
+}
+
+/* set the format and features for buttons */
+
+#gameButtonArea{
+  display: flex;
+  justify-content: center;
+}
+
+#button1{
+  background: aquamarine;
+}
+
+#button1:active, #button1.lit{
+  background: green;
+}
+
+#button2{
+  background: lightblue;
+}
+
+#button2:active, #button2.lit{
+  background:blue;
+}
+
+#button3{
+  background: pink;
+}
+
+#button3:active, #button3.lit{
+  background:red;
+}
+
+
+#button4{
+  background: lightyellow;
+}
+
+
+#button4:active, #button4.lit{
+  background:yellow;
+}
+
+
+#button5{
+  background: #f0f0f5;
+}
+
+#button5:active, #button5.lit{
+  background: #73738c;
+}
+
+#title_countDown{
+  margin: 0px;
+  margin-bottom: 5px;
+  font-family: Bradley Hand, cursive
+}
+

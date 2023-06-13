@@ -9,22 +9,63 @@
     <link rel="stylesheet" href="/static/style.css">
 
     <style>
-        body {
-            text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .upload-button {
-            background-color: #4CAF50;
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #nav-bar {
+            flex: 0 0 auto;
+        }
+
+        #banner {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+            flex: 0 0 auto;
+        }
+
+        #banner h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        #content {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../static/images/brain.gif');
+            background-repeat: no-repeat;
+            background-size: 1920px 800px;
+        }
+
+        .upload-button,
+        .classify-button {
+            display: inline-block;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 18px;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .upload-button:hover {
-            background-color: #45a049;
+        .upload-button:hover,
+        .classify-button:hover {
+            background-color: #0069d9;
         }
 
         /* Hide the default file input */
@@ -46,16 +87,189 @@
             background-color: #0069d9;
         }
 
-      /*  .file-input-label::before {
-       /*     content: "Choose File";
-      /*  }
-
         /* Display the selected file name */
         .file-name {
             margin-top: 10px;
             font-weight: bold;
+            color: white;
         }
+
+        /* Custom styling for the banner section */
+        #banner {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+
+        #banner h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        /* Custom styling for the new upload button */
+        .icon-btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #cdcdcd;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            transition: width 0.2s ease-in-out;
+            font-weight: 500;
+            font-family: inherit;
+        }
+
+        .add-btn:hover {
+            width: 120px;
+        }
+
+        .add-btn::before,
+        .add-btn::after {
+            transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 10px;
+            top: calc(50% - 2px);
+            background: seagreen;
+        }
+
+        .add-btn::after {
+            right: 14px;
+            overflow: hidden;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .add-btn::before {
+            left: 14px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        .icon-btn:focus {
+            outline: none;
+        }
+
+        .btn-txt {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .add-btn:hover::before,
+        .add-btn:hover::after {
+            width: 4px;
+            border-radius: 2px;
+        }
+
+        .add-btn:hover .btn-txt {
+            opacity: 1;
+        }
+
+        .add-icon::after,
+        .add-icon::before {
+            transition: all 0.2s ease-in-out;
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 2px;
+            top: calc(50% - 10px);
+            background: seagreen;
+            overflow: hidden;
+        }
+
+        .add-icon::before {
+            left: 22px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        .add-icon::after {
+            right: 22px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .add-btn:hover .add-icon::before {
+            left: 15px;
+            height: 4px;
+            top: calc(50% - 2px);
+        }
+
+        .add-btn:hover .add-icon::after {
+            right: 15px;
+            height: 4px;
+            top: calc(50% - 2px);
+        }
+        .btn {
+  position: relative;
+  padding: 1rem 2.5rem;
+  color: #ffd739;
+  font-size: 1em;
+  background-color: #007bff;
+  padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 4px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition-property: all;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007bff;
+  box-shadow: 0px 14px 56px -11px #007bff;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: white;
+  border-radius: 100px;
+  right: 2rem;
+  bottom: 37%;
+  animation: 0.5s both ease-in-out infinite;
+}
+
+.btn:hover::before {
+  animation-name: bounce_591;
+  transition: all 0.3s ease;
+}
+
+@keyframes bounce_591 {
+  0% {
+    bottom: 37%;
+  }
+
+  50% {
+    bottom: 70%;
+  }
+
+  100% {
+    bottom: 37%;
+  }
+}
     </style>
+
     <script>
         window.onload = function() {
             var logo = document.querySelector('.navbar-brand');
@@ -72,10 +286,34 @@
             });
         };
     </script>
+    <script>
+        window.onload = function() {
+            var logo = document.querySelector('.navbar-brand');
+            logo.addEventListener('click', function() {
+                window.location.href = 'page';
+            });
+
+            // Display the selected file name
+            var fileInput = document.querySelector('#imageUpload');
+            var fileNameDisplay = document.querySelector('.file-name');
+
+            fileInput.addEventListener('change', function() {
+                fileNameDisplay.textContent = this.files[0].name;
+            });
+
+            // Open file manager when "Add Photo" button is clicked
+            var addPhotoButton = document.querySelector('.add-btn');
+            var fileInputButton = document.querySelector('#imageUpload');
+
+            addPhotoButton.addEventListener('click', function() {
+                fileInputButton.click();
+            });
+        };
+    </script>
 </head>
 <body>
     <section id="nav-bar">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="../static/images/949ea004-f044-4549-803f-84bcee94c27b-removebg-preview.png" width="200" height="100" alt="">
@@ -87,23 +325,27 @@
             </div>
         </nav>
     </section>
-    <section id="banner">
+    <section id="banner" style="height: 50px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Image Classification</h2>
+                    <h2>Alzheimer's Classification</h2>
                     <form method="POST" enctype="multipart/form-data" action="/classify">
                         <div class="form-group">
-                            <label for="imageUpload"><b>Choose an image:</b></label>
-                            <label class="file-input-label" for="imageUpload">Choose File</label>
-                            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+                            <label for="imageUpload"><strong>Please upload an MRI image:</strong></label><br>
+                            <button class="icon-btn add-btn">
+                                <div class="add-icon"></div>
+                                <div class="btn-txt">Add Photo</div>
+                            </button>
+                            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required style="display: none;">
                             <div class="file-name"></div>
                         </div>
-                        <button type="submit" class="upload-button">Upload and Classify</button>
+                        <button type="submit" class="btn" style="width: 160px;">Classify</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <section id="content"></section>
 </body>
 </html>

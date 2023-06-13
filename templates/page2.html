@@ -1,78 +1,53 @@
+<!DOCTYPE html>
 <html>
-<header>
-    <title>Memo </title>
+<head>
+    <title>Memo</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <title>Center align button</title>
     <style>
         body {
             text-align: center;
         }
     </style>
-</header>
+</head>
 
 <body>
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img
-                        src="../static/images/949ea004-f044-4549-803f-84bcee94c27b-removebg-preview.png"
-                        width="200" height="100" " alt="" ></a>
-                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <a class="navbar-brand" href="page" onclick="goToHomePage()">
+                    <img src="../static/images/949ea004-f044-4549-803f-84bcee94c27b-removebg-preview.png" width="200" height="100" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
-
                     <span class="navbar-toggler-icon"></span>
-
-
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#top">Signs and symptoms</a>
-</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#services">Stages</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#about-us">causes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#footer">How to diagnose</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#footer">How to treat it</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#top">Signs and symptoms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Stages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-us">Causes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#footer">How to diagnose</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#footer">How to treat it</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </section>
-    <!------banner section-->
-    <section id="banner">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6">
-                    <p class="promo-title"> How does Alzheimer's disease affect the brain? </p>
-
-
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="../static/images/brain_slices_alzheimers_0-removebg-preview.png"
-                        class="img-fluid">
-                </div>
-
-           
-        </div>
-        </div>
-
     </section>
     <!----------service----------->
     <section id="services">
@@ -100,34 +75,30 @@
     </section>
     <!----------about us------------>
     <section id="about-us">
-        <div  class="container text-center">
-            <h1 class="title text-center"> Stages of Alzheimer's disease</h1>
-            <div >
-                <div  class="text-left">
-                    <p class="about-title text-left"> Mild Alzheimer’s disease </p>
-                   
-                    As Alzheimer’s worsens, people experience greater memory loss and other cognitive difficulties. Problems can include
-                    wandering and getting lost, trouble handling money and paying bills, repeating questions, taking longer to complete
-                    normal daily tasks, and personality and behavior changes. People are often diagnosed in this stage.
-                    <p class="about-title text-left "> Moderate Alzheimer’s disease </p>
-
-                
-                    In this stage, damage occurs in areas of the brain that control language, reasoning, conscious thought, and sensory
-                    processing, such as the ability to correctly detect sounds and smells. Memory loss and confusion grow worse, and people
-                    begin to have problems recognizing family and friends. They may be unable to learn new things, carry out multistep tasks
-                    such as getting dressed, or cope with new situations. In addition, people at this stage may have hallucinations,
-                    delusions, and paranoia and may behave impulsively.
-
-                   <p class="about-title text-left "> Severe Alzheimer’s disease </p>
-                    
-                    Ultimately, plaques and tangles spread throughout the brain, and brain tissue shrinks significantly. People with severe
-                    Alzheimer’s cannot communicate and are completely dependent on others for their care. Near the end of life, the person
-                    may be in bed most or all of the time as the body shuts down.
-                  
+        <div class="container text-center">
+            <h1 class="title text-center">Stages of Alzheimer's Disease</h1>
+            <div>
+                <div class="text-left">
+                    <p class="about-title text-left">Very Mild Demented</p>
+                    Very Mild Demented is the earliest stage of Alzheimer's disease. At this stage, individuals may experience subtle changes in memory and cognitive abilities. They may occasionally forget familiar words or misplace everyday objects. These symptoms are often difficult to distinguish from normal age-related changes.
+    
+                    <p class="about-title text-left">Mild Alzheimer's Disease</p>
+                    As Alzheimer's disease progresses, individuals experience greater memory loss and cognitive difficulties. Problems may include wandering, getting lost, difficulty handling finances, repeating questions, taking longer to complete daily tasks, and changes in personality and behavior. Mild Alzheimer's is typically the stage at which people are diagnosed.
+    
+                    <p class="about-title text-left">Moderate Alzheimer's Disease</p>
+                    In the moderate stage, Alzheimer's disease causes damage to areas of the brain responsible for language, reasoning, conscious thought, and sensory processing. Memory loss and confusion worsen, and individuals may struggle to recognize family and friends. They may have difficulty learning new things, performing complex tasks, and adapting to new situations. Hallucinations, delusions, paranoia, and impulsive behavior may also occur.
+    
+                    <p class="about-title text-left">Severe Alzheimer's Disease</p>
+                    In the severe stage of Alzheimer's disease, plaques and tangles spread throughout the brain, leading to significant shrinkage of brain tissue. Individuals at this stage are unable to communicate and depend entirely on others for their care. They may spend most or all of their time in bed as the body progressively shuts down.
+    
+                    <p class="about-title text-left">Non-Demented</p>
+                    Non-Demented refers to individuals who do not exhibit symptoms of dementia, including Alzheimer's disease. They maintain their cognitive abilities and memory functions within the expected range for their age.
+    
                 </div>
-        
             </div>
         </div>
+    </section>
+    
         <section id="services">
             <div class="container ">
                 <h1 class="title text-center"  > causes of Alzheimer's disease</h1>
@@ -240,5 +211,10 @@
         var scroll = new SmoothScroll('a[href*="#"]');
     </script>
 </body>
-
+<script>
+    function goToHomePage() {
+        window.location.href = "page.html";
+    }
+</script>
+</body>
 </html>

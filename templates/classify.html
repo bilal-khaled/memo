@@ -42,24 +42,28 @@
             </div>
         </nav>
     </section>
-    <section id="banner">
+    <section id="banner" style="height: 875px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Image Classification</h2>
-                    <h3>Predicted Label: {{ predicted_class }}</h3>
+                    <h2 style="height:0px;font-size: 0px; color: burlywood;">Image Classification</h2>
+                    <h3 style="height:30px; font-size: 35px;">Your diagnose is : </h3>
+                    <h3 style="font-size: 35px; color:burlywood ;">{{ predicted_class }}</h3> 
+                    <p style="font-size: 18px;">Need more info about Alzheimer's stages? <a href="page2" style="color: crimson;">click here</a></p>
                     <div class="image-container">
                         {% if image_path %}
-                            <div class="image-item">
-                                <h4>Original Image</h4>
-                                <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image">
+                            <div class="image-item" style="height: 300px;">
+                                <h4 style="height: 30px; font-size: 30px;">Your Brain MRI image </h4>
+                                <img src="{{ url_for('static', filename=image_path) }}" width="100" height="150" alt="Uploaded Image" style="
+                                height: 200px;">
                             </div>
                         {% else %}
                             <p>No original image available.</p>
                         {% endif %}
                         {% if shap_plot_path %}
-                            <div class="image-item">
-                                <h4>SHAP Plot</h4>
+                            <div class="image-item" style="height: 70px;">
+                                <h4 style="height: 40px;font-size: 30px;
+                                font-size: 30px;">Shap analysis</h4>
                                 <img src="{{ url_for('static', filename=shap_plot_path) }}" alt="SHAP Plot">
                             </div>
                         {% else %}

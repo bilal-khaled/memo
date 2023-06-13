@@ -25,6 +25,14 @@ def index():
 def show_page():
     return render_template('page.html')
 
+@app.route('/index')
+def index_page():
+    return render_template('index.html')
+
+@app.route('/index_2')
+def index_1_page():
+    return render_template('index_2.html')
+
 @app.route('/machine', methods=['GET', 'POST'])
 def show_machine():
     if request.method == 'POST':
@@ -61,7 +69,7 @@ def show_machine():
 
         # Convert the prediction to a meaningful label
         if prediction == 0:
-            label = 'Converted'
+            label = 'Moderate'
         elif prediction == 1:
             label = 'Demented'
         else:
@@ -114,7 +122,7 @@ def classify():
         # Perform model prediction
         prediction = model.predict(image_array)
         predicted_class = np.argmax(prediction)
-        predicted_label = ['MildDemented', 'ModerateDemented', 'NonDemented', 'VeryMildDemented'][predicted_class]
+        predicted_label = ['Mild Demented', 'Moderate Demented', 'Non Demented', 'Very Mild Demented'][predicted_class]
 
         # preprocess the image to remove the black background
         
