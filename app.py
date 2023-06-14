@@ -19,11 +19,11 @@ explainer = shap.DeepExplainer(model, np.zeros((1, 128, 128, 3)))  # Provide an 
 
 @app.route('/')
 def index():
-    return render_template('start.html')
-
-@app.route('/page')
-def show_page():
     return render_template('page.html')
+
+#@app.route('/page')
+#def show_page():
+   # return render_template('page.html')
 
 @app.route('/index')
 def index_page():
